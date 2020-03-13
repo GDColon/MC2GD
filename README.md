@@ -8,10 +8,12 @@ Or click the green "clone or download" button. They both do exactly the same thi
 
 # How the heck do I use this?
 
-[**Here are the instructions.**](https://github.com/GDColon/MC2GD/blob/master/guide.md)
+### [**Here are the instructions.**](https://github.com/GDColon/MC2GD/blob/master/guide.md)
+
 Knock yourself out.
 
 # How does it all work?
 
 The inner machinations of my mind are an enigma.
+
 (WIP)
