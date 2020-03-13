@@ -1,0 +1,30 @@
+
+MC2GD SETTINGS
+
+* Every line in this file that doesn't start with a ">" will be ignored by the code
+* Note that HOME is the same as C:/Users/YourName
+
+==============================================
+
+GD SAVE FILE LOCATION:
+The file where your GD levels are saved (CCLocalLevels.dat)
+
+> HOME/AppData/Local/GeometryDash/CCLocalLevels.dat
+
+==============================================
+
+MINECRAFT LOG FILE LOCATION:
+The file where your most recent Minecraft log is stored (latest.log)
+
+> HOME/AppData/Roaming/.minecraft/logs/latest.log
+
+==============================================
+
+Y OFFSET
+A Minecraft world is 256 blocks tall. The GD editor is only 100.
+Change this number to adjust how many editor tiles the level should be shifted down.
+0 = Bottom grid space, -10 = Ten tiles below bottom grid space, etc
+(note that all blocks are on group 1 and can be shifted with a move trigger)
+
+> -10
+
