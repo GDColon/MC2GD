@@ -22,7 +22,7 @@ Just kidding, you'll be fine. Go into your Minecraft world (or type `/reload` if
 
 Once you're all set, type `/function scripts:find` into chat and watch as the datapack absolutely obliterates your chat, and if you have a less fortunate computer, your CPU. An armor stand is scanning every single block and saying its name in the chat.
 
-Once you get a message saying "Done", you can close Minecraft and...
+Once (and only when) you get a message saying "Done", you can close Minecraft and...
 
 ## Step 4 - Run the Program
 
@@ -40,7 +40,7 @@ When you open Geometry Dash, the generated level should appear at the top of you
 
 3. Find a cool spot in the world and type `/function scripts:find`. The datapack will scan all the way up to **1000 blocks south** of your current position. The X position will remain constant.
 
-4. Close Minecraft and run `MC2GD.bat`
+4. Once a message saying "done" appears, close Minecraft and run `MC2GD.bat`
 
 5. Open Geometry Dash. If everything goes correctly, your Minecraft world should appear as your first created level!
 
