@@ -71,6 +71,7 @@ fs.readFile(logFile, 'utf8', function(err, data) {
     else data = data.split(": [CHAT] *Scanning world...\n")
 
     let worldName = data[0].match(/Saving chunks for level '(.+)\/minecraft:/g)
+    if (!worldName) return console.log("Error! Did you save the world before quitting?")
     worldName = worldName[worldName.length-1].slice(25, -12)
     data = data[1].split(": [CHAT] [Server] Done\n")[0]
     let dimension = data.match(/\*Dimension: (.+)\n/)[1]
