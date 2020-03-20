@@ -93,7 +93,7 @@ fs.readFile(logFile, 'utf8', function(err, data) {
     console.log("> Building level...")
     
     list.forEach(x => {
-        x.block = x.block.replace(/wood (.+)$/gi, "$1") // Convert names like "Dark Oak Wood Fence" to "Dark Oak Fence"
+        x.block = x.block.replace(/wood (.+)$/gi, "$1").replace("Grey", "Gray") // Convert names like "Dark Oak Wood Fence" to "Dark Oak Fence" and "Grey Wool" to "Gray Wool"
         let data = blocks[x.block]
         if (!data) return missingList(x.block)
         if (!Array.isArray(data)) data = [data]
