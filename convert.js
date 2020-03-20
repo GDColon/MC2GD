@@ -93,6 +93,7 @@ fs.readFile(logFile, 'utf8', function(err, data) {
     console.log("> Building level...")
     
     list.forEach(x => {
+        x.block = x.block.replace(/wood (.+)$/gi, "$1") // Convert names like "Dark Oak Wood Fence" to "Dark Oak Fence"
         let data = blocks[x.block]
         if (!data) return missingList(x.block)
         if (!Array.isArray(data)) data = [data]
@@ -104,8 +105,8 @@ fs.readFile(logFile, 'utf8', function(err, data) {
             if (y.y) pos[1] += y.y              // Y Offset
             levelStr += `1,${y.id},2,${pos[0]},3,${pos[1]},57,1`
             if (y.r) levelStr += `,6,${y.r}`    // Rotation
-            if (y.flipX) levelStr += `,4,1`    // Flip X
-            if (y.flipY) levelStr += `,5,1`    // Flip Y
+            if (y.flipX) levelStr += `,4,1`     // Flip X
+            if (y.flipY) levelStr += `,5,1`     // Flip Y
             if (y.z) levelStr += `,24,${y.z}`   // Z Layer
             if (y.s) levelStr += `,32,${y.s}`   // Scale
             if (y.c) {                          // Color (HSV)
@@ -134,7 +135,10 @@ fs.readFile(logFile, 'utf8', function(err, data) {
         saveData = saveData.split("<k>_isArr</k><t />")
         saveData[1] = saveData[1].replace(/<k>k_(\d+)<\/k><d><k>kCEK<\/k>/g, function(n) { return "<k>k_" + (Number(n.slice(5).split("<")[0])+1) + "</k><d><k>kCEK</k>" })
         saveData = saveData[0] + "<k>_isArr</k><t />" + leveldata.ham + leveldata.bur + levelStr + leveldata.ger + saveData[1]
-        saveData = saveData.replace("[[LEVELNAME]]", worldName).replace("[[LEVELDESC]]", desc).replace("[[BGCOL]]", leveldata.backgrounds[dimension])
+        saveData = saveData
+        .replace("[[LEVELNAME]]", worldName).replace("[[LEVELDESC]]", desc)
+        .replace("[[BGCOL]]", leveldata.backgrounds[dimension])
+        .replace("[[OBJECTS]]", objects)
         
         fs.writeFileSync(gdLevels, saveData, 'utf8')
         console.log(`Saved level with ${objects} objects!`);
