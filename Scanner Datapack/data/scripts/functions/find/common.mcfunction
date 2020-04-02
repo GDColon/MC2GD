@@ -1,0 +1,3 @@
+execute if block ~ ~ ~ minecraft:stone run tellraw @a [{"text":"Stone at "},{"score":{"name":"x","objective":"scanner"}},{"text":", "},{"score":{"name":"y","objective":"scanner"}},{"text":", "},{"score":{"name":"z","objective":"scanner"}}]
+execute if block ~ ~ ~ minecraft:dirt run tellraw @a [{"text":"Dirt at "},{"score":{"name":"x","objective":"scanner"}},{"text":", "},{"score":{"name":"y","objective":"scanner"}},{"text":", "},{"score":{"name":"z","objective":"scanner"}}]
+execute if block ~ ~ ~ minecraft:grass_block run tellraw @a [{"text":"Grass Block at "},{"score":{"name":"x","objective":"scanner"}},{"text":", "},{"score":{"name":"y","objective":"scanner"}},{"text":", "},{"score":{"name":"z","objective":"scanner"}}]
