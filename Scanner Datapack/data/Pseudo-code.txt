@@ -16,17 +16,23 @@ z_offset = z+1001;
 
 forceload.add(1001); // make sure the blocks are loaded
 for (y=0;y<=255;y++) { // loop for each Y level (0-255)
-    for (z=start_z; z<z_offset; z++) { // loop from current Z pos, for 1001 blocks
-        if (is_special(x,y,z)) {
-	    check_this_block_against_all_special_blocks(x,y,z); // check if the block is special BEFORE trying to mine it
-	} else {
-	    count = loot(x,y,z,silk_touch_shears);
-	    if (count==0) {loot(x,y,z,silk_touch_diamond_pickaxe);} // checking count is faster than checking entities
-	    if (costly_get_item()) { // even though it is slow, checking for the entity is more reliable
-		print(costly_get_item().name + " at " + x + ", " + y + ", " + z);
+	for (z=start_z; z<z_offset; z++) { // loop from current Z pos, for 1001 blocks
+		if (is_common(x,y,z)) {
+			check_block_against_all_common_blocks(x,y,z); // check if the block is common BEFORE trying to mine it
+		}
+		if (is_special(x,y,z)) {
+	    	check_block_against_all_special_blocks(x,y,z); // check if the block is special BEFORE trying to mine it
+		}
+		if (!is_null() && !is_common() && !is_special()) { // skip the block if it should be skipped, or if it's common/special
+			count = loot(x,y,z,silk_touch_shears); // loot the block with silk touch shears
+			if (count==0) { // checking count is faster than checking entities
+				loot(x,y,z,silk_touch_diamond_pickaxe); // try looting with a silk touch diamond pickaxe if previous loot failed
+			}
+			if (costly_get_item()) { // even though it is slow, checking for the entity is more reliable
+				print(costly_get_item().name + " at " + x + ", " + y + ", " + z);
+			}
 	    }
 	}
-    }
 }
 
 print("[Server] Done"); // I don't know if outputting this was required or not so just in case...
