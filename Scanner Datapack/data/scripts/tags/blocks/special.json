@@ -1,0 +1,29 @@
+{
+    "values": [
+      "minecraft:water",
+      "minecraft:lava",
+      "minecraft:bubble_column",
+      "minecraft:fire",
+      "minecraft:bedrock",
+      "minecraft:spawner",
+      "minecraft:end_portal_frame",
+      "minecraft:end_portal",
+      "minecraft:nether_portal",
+      "minecraft:end_gateway",
+      "minecraft:dragon_egg",
+      "minecraft:chain_command_block",
+      "minecraft:repeating_command_block",
+      "minecraft:command_block",
+      "minecraft:chorus_plant",
+      "minecraft:chorus_flower",
+      "minecraft:snow",
+      "minecraft:carrots",
+      "minecraft:potatoes",
+      "minecraft:beetroots",
+      "minecraft:wheat",
+      "minecraft:attached_melon_stem",
+      "minecraft:attached_pumpkin_stem",
+      "minecraft:melon_stem",
+      "minecraft:pumpkin_stem"
+    ]
+  }
